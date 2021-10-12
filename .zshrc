@@ -10,9 +10,10 @@ compinit
 colors
 
 zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true
 
 function powerline_precmd() {
-    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules venv,user,host,ssh,cwd,perms,jobs,exit,root -modules-right git,hg)"
+    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules venv,user,host,ssh,cwd,docker,perms,git,hg,jobs,exit,root,vgo)"
 }
 
 function install_powerline_precmd() {
