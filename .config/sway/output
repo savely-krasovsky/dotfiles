@@ -1,0 +1,7 @@
+##
+# output configuration
+##
+
+output DP-1 res 1920x1080@144.001Hz pos 0,0
+output DP-2 res 1920x1080@144.001Hz pos 1920,0
+output HDMI-A-2 res 1920x1080@144.001Hz pos 3840,0

@@ -1,0 +1,8 @@
+##
+# input configuration
+##
+
+input * {
+	xkb_layout "us,ru"
+	xkb_options "grp:win_space_toggle"
+}

@@ -1,0 +1,18 @@
+##
+# main configuration
+##
+
+## variables
+set $mod Mod4
+set $term alacritty
+set $menu wofi --show=drun --prompt="Введите имя приложения" | xargs swaymsg exec --
+
+include ./output
+include ./idle
+include ./input
+include ./bindings
+include ./bar
+include ./style
+include ./apps
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

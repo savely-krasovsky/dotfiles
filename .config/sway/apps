@@ -1,0 +1,5 @@
+##
+# apps settings
+##
+
+for_window [title="Громкость"] floating enabled

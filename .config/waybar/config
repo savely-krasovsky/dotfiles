@@ -1,0 +1,101 @@
+{
+	// -------------------------------------------------------------------------
+	// Global configuration
+	// -------------------------------------------------------------------------
+
+	"layer": "top",
+	"position": "top",
+
+	// If height property would be not present, it'd be calculated dynamically
+	"height": 30,
+
+	"modules-left": [
+		"sway/mode",
+		"custom/spotify"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"tray",
+		"idle_inhibitor",
+		"pulseaudio",
+		"network#ethernet",
+		"network#wifi",
+		"network#vpn",
+		"sway/language",
+		"clock#date",
+		"clock#time"
+	],
+
+
+	// -------------------------------------------------------------------------
+	// Modules
+	// -------------------------------------------------------------------------
+	"sway/mode": {
+		"format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+		"tooltip": false
+	},
+	"custom/spotify": {
+		"format": " {}",
+		"return-type": "json",
+		"max-length": 60,
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		},
+		"tooltip": false
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"default": ["", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"network#ethernet": {
+		"interface": "enp*",
+		"format": "",
+		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+		"tooltip-format-disconnected": "⚠ Отключено!"
+	},
+	"network#wifi": {
+		"interface": "wlp*",
+		"interval": 1,
+		"format-wifi": " {signalStrength}%",
+		"format-linked": "",
+		"format-disconnected": "",
+		"tooltip-format": "{ifname} ({essid}): {ipaddr}/{cidr}"
+	},
+	"network#vpn": {
+		"interface": "tun*",
+		"format": "",
+		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+		"tooltip-format-disconnected": "⚠ Отключено!"
+	},
+	"sway/language": {
+		"format": " {}",
+		"tooltip-format": "{long}"
+	},
+	"clock#date": {
+		"interval": 1,
+		"format": " {:%e %b %Y}",
+		"tooltip": false
+	},
+	"clock#time": {
+		"interval": 1,
+		"format": "{:%T}",
+		"tooltip": false
+	}
+}

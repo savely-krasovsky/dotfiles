@@ -1,0 +1,6 @@
+##
+# style
+##
+
+output "*" bg bg.jpg fill
+font pango:JetBrains Mono 14px
