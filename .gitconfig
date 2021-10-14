@@ -1,0 +1,12 @@
+[user]
+	email = savely@krasovs.ky
+	name = Savely Krasovsky
+
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+
+[sendemail]
+	smtpserver = smtp.fastmail.com
+	smtpuser = savely@krasovs.ky
+	smtpencryption = tls
+	smtpserverport = 587

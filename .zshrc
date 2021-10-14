@@ -35,5 +35,10 @@ for conf in "$HOME/.config/zsh/"*.zsh; do
 done
 unset conf
 
+# Disable close button for GTK apps
+# gsettings set org.gnome.desktop.wm.preferences button-layout :
+
 alias ls='ls -hp --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+export EDITOR=nano
