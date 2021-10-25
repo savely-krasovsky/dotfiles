@@ -91,11 +91,11 @@
 	"clock#date": {
 		"interval": 1,
 		"format": " {:%e %b %Y}",
-		"tooltip": false
+		"tooltip-format": "{:%A}"
 	},
 	"clock#time": {
 		"interval": 1,
 		"format": "{:%T}",
-		"tooltip": false
+		"tooltip-format": "{:%Z}"
 	}
 }
