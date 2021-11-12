@@ -1,7 +1,45 @@
 daemonize
-# Default was sans-serif
-font=system-ui
-color=000000
-hide-keyboard-layout
+image=~/.config/sway/bg.jpg
+show-keyboard-layout
 indicator-caps-lock
+font=JetBrains Mono
 indicator-radius=100
+
+# various colors
+color=FFFFFFFF
+bs-hl-color=DB3300FF
+key-hl-color=33DB00FF
+caps-lock-bs-hl-color=DB3300FF
+caps-lock-key-hl-color=33DB00FF
+layout-bg-color=000000C0
+layout-border-color=00000000
+layout-text-color=FFFFFFFF
+separator-color=000000FF
+
+# inside colors
+inside-color=000000C0
+inside-clear-color=E5A445C0
+inside-caps-lock-color=000000C0
+inside-ver-color=0072FFC0
+inside-wrong-color=FA0000C0
+
+# line colors
+line-color=000000FF
+line-clear-color=000000FF
+line-caps-lock-color=000000FF
+line-ver-color=000000FF
+line-wrong-color=000000FF
+
+# ring colors
+ring-color=337D00FF
+ring-clear-color=E5A445FF
+ring-caps-lock-color=E5A445FF
+ring-ver-color=3300FFFF
+ring-wrong-color=7D3300FF
+
+# text colors
+text-color=E5A445FF
+text-clear-color=000000FF
+text-caps-lock-color=E5A445FF
+text-ver-color=000000FF
+text-wrong-color=000000FF

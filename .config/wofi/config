@@ -1,2 +1,5 @@
-insensitive = true
-#drun-print_command=true
+allow_images=true
+term=alacritty
+insensitive=true
+image_size=16
+key_expand=Alt_L

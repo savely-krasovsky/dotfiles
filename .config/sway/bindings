@@ -21,7 +21,6 @@ bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.f
 bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 
-
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
@@ -36,11 +35,11 @@ bindsym --to-code $mod+Shift+c reload
 bindsym --to-code $mod+Shift+e exec swaynag \
 	-t warning \
 	-m 'Вы уверены?' \
-	-b 'Выключение' 'systemctl poweroff' \
-	-b 'Перезагрузка' 'systemctl reboot'
+	-b 'Перезагрузка' 'systemctl reboot' \
+	-b 'Завершение работы' 'systemctl poweroff'
 
 # Lock screen
-bindsym --to-code $mod+l exec swaylock
+bindsym --to-code $mod+l exec swaylock -f
 
 
 
