@@ -2,7 +2,7 @@
 # input configuration
 ##
 
-input * {
+input type:keyboard {
 	xkb_layout "us,ru"
 	xkb_options "grp:alt_space_toggle"
 }

@@ -16,6 +16,10 @@
 }
 
 /* Modules */
+#workspaces {
+	padding: 0 .7em;
+}
+
 #mode,
 #custom-spotify {
 	background: #404040;

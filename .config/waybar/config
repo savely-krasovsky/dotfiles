@@ -10,6 +10,7 @@
 	"height": 30,
 
 	"modules-left": [
+		"sway/workspaces",
 		"sway/mode",
 		"custom/spotify"
 	],
@@ -31,6 +32,15 @@
 	// -------------------------------------------------------------------------
 	// Modules
 	// -------------------------------------------------------------------------
+	"sway/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
 	"sway/mode": {
 		"format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
 		"tooltip": false

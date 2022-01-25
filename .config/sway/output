@@ -2,6 +2,18 @@
 # output configuration
 ##
 
-output DP-1 res 1920x1080@144.001Hz pos 0,0
-output DP-2 res 1920x1080@144.001Hz pos 1920,0
-output HDMI-A-2 res 1920x1080@144.001Hz pos 3840,0
+set $mon1 DP-3
+set $mon2 DP-2
+set $mon3 HDMI-A-3
+
+set $ws1 1
+set $ws2 3
+set $ws3 2
+
+output $mon1 res 1920x1080@144.001Hz pos 0,0
+output $mon2 res 1920x1080@144.001Hz pos 1920,0
+output $mon3 res 1920x1080@144.001Hz pos 3840,0
+
+workspace $ws1 output $mon1
+workspace $ws2 output $mon2
+workspace $ws3 output $mon3

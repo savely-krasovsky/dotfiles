@@ -1,6 +1,7 @@
 [user]
 	email = savely@krasovs.ky
-	name = Savely Krasovsky
+	name = "Savely Krasovsky"
+	signingkey = "key::sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBHDJaEiQvmI82frR7ImRoYY40JIrx781hzqPM0XXhupbAFNz+3pT50RzyUiCbIM4V9v3Yqn8086DQoZuBcRvuREAAAAEc3NoOg=="
 
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
@@ -10,3 +11,7 @@
 	smtpuser = savely@krasovs.ky
 	smtpencryption = tls
 	smtpserverport = 587
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
