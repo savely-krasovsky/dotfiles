@@ -2,9 +2,9 @@
 # output configuration
 ##
 
-set $mon1 DP-3
+set $mon1 DP-1
 set $mon2 DP-2
-set $mon3 HDMI-A-3
+set $mon3 HDMI-A-2
 
 set $ws1 1
 set $ws2 3
