@@ -12,6 +12,7 @@
 	"modules-left": [
 		"sway/workspaces",
 		"sway/mode",
+		"custom/spotify",
 		"custom/yandexmusic"
 	],
 	"modules-center": [
