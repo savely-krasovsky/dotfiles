@@ -21,7 +21,8 @@
 }
 
 #mode,
-#custom-spotify {
+#custom-spotify,
+#custom-yandexmusic {
 	background: #404040;
 	padding: 0 .7em;
 }
@@ -57,6 +58,10 @@
 
 #custom-spotify {
 	color: #66DC69;
+}
+
+#custom-yandexmusic {
+	color: #FDD228;
 }
 
 #network.vpn {

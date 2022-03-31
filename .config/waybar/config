@@ -12,7 +12,7 @@
 	"modules-left": [
 		"sway/workspaces",
 		"sway/mode",
-		"custom/spotify"
+		"custom/yandexmusic"
 	],
 	"modules-center": [
 	],
@@ -51,6 +51,13 @@
 		"max-length": 60,
 		"escape": true,
 		"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
+	},
+	"custom/yandexmusic": {
+		"format": "<span foreground=\"#E8482C\"></span> {}",
+		"return-type": "json",
+		"max-length": 60,
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py --player YandexMusic 2> /dev/null"
 	},
 
 	"tray": {

@@ -20,7 +20,6 @@ bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.f
 # Take a screenshot of region
 bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
-
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
