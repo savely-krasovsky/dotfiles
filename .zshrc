@@ -47,3 +47,6 @@ alias ls='ls -hp --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 export EDITOR=nano
+
+# Added by Toolbox App
+export PATH="$PATH:/home/savely/.local/share/JetBrains/Toolbox/scripts"
