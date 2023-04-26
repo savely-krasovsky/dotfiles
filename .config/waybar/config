@@ -86,7 +86,8 @@
 		"interface": "enp*",
 		"format": "",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format-disconnected": "⚠ Отключено!"
+		"tooltip-format-disconnected": "⚠ Отключено!",
+		"on-click": "nm-connection-editor"
 	},
 	"network#wifi": {
 		"interface": "wlp*",
@@ -94,13 +95,15 @@
 		"format-wifi": " {signalStrength}%",
 		"format-linked": "",
 		"format-disconnected": "",
-		"tooltip-format": "{ifname} ({essid}): {ipaddr}/{cidr}"
+		"tooltip-format": "{ifname} ({essid}): {ipaddr}/{cidr}",
+		"on-click": "nm-connection-editor"
 	},
 	"network#vpn": {
-		"interface": "tun*",
+		"interface": "vpn*",
 		"format": "",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format-disconnected": "⚠ Отключено!"
+		"tooltip-format-disconnected": "⚠ Отключено!",
+		"on-click": "nm-connection-editor"
 	},
 	"sway/language": {
 		"format": " {}",

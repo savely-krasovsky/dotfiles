@@ -2,4 +2,17 @@
 # apps settings
 ##
 
-for_window [title="Громкость"] floating enabled
+for_window {
+	[shell="xwayland"] title_format "[X] %title"
+
+	[app_id="pavucontrol"]		floating enabled
+	[app_id="nm-connection-editor"]	floating enabled
+	[app_id="org.gnome.Calculator"]	floating enable
+
+	[window_role="pop-up"]	floating enable
+	[window_role="bubble"]	floating enable
+	[window_role="dialog"]	floating enable
+	[window_type="dialog"]	floating enable
+
+	[app_id="vlc"] inhibit_idle visible
+}

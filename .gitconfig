@@ -3,7 +3,7 @@
 	name = "Savely Krasovsky"
 
 [credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
+	helper = /usr/lib/git-core/git-credential-gnome-keyring
 
 [sendemail]
 	smtpserver = smtp.fastmail.com

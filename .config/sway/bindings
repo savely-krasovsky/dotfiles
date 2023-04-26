@@ -35,8 +35,11 @@ bindsym --to-code $mod+Shift+c reload
 bindsym --to-code $mod+Shift+e exec swaynag \
 	-t warning \
 	-m 'Вы уверены?' \
+	-b 'Выйти из Sway' 'swaymsg exit' \
+	-b 'Завершение работы' 'systemctl poweroff' \
 	-b 'Перезагрузка' 'systemctl reboot' \
-	-b 'Завершение работы' 'systemctl poweroff'
+	-b 'Ждущий режим' 'systemctl suspend' \
+	--font 'JetBrains Mono 16px'
 
 # Lock screen
 bindsym --to-code $mod+l exec swaylock -f
