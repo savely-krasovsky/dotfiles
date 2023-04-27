@@ -6,6 +6,7 @@
 set $mod Mod4
 set $term alacritty
 set $menu wofi --show=drun --prompt="Введите имя приложения" | xargs swaymsg exec --
+set $clipboardmanager cliphist list | wofi --dmenu --prompt="Буфер обмена" | cliphist decode | wl-copy
 
 include ./output
 include ./idle
@@ -16,6 +17,9 @@ include ./style
 include ./apps
 
 include /etc/sway/config.d/*
+
+exec_always wl-paste --type text --watch cliphist store
+exec_always wl-paste --type image --watch cliphist store
 
 exec_always nm-applet --indicator
 #exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

@@ -2,7 +2,7 @@
 #window {
   border: 1px solid #333333; /* Sway palette: unfocused/border */
   background-color: #222222; /* Sway palette: unfocused/background */
-  font-family: system-ui, sans-serif;
+  font-family: JetBrains Mono, chhhttsystem-ui, sans-serif;
 }
 
 /* Search input */

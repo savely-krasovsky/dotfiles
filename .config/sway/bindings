@@ -12,6 +12,8 @@ bindsym --to-code $mod+Shift+q kill
 
 # Start your launcher
 bindsym --to-code $mod+d exec $menu
+# Start clipboard manager
+bindsym --to-code $mod+x exec $clipboardmanager
 
 # Take a screenshot of screen
 bindsym Print exec grim - | wl-copy -t image/png
