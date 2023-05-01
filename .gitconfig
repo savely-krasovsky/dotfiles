@@ -12,3 +12,5 @@
 	smtpserverport = 587
 [core]
 	autocrlf = input
+[safe]
+	directory = /opt/flutter

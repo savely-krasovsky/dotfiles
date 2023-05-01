@@ -22,14 +22,24 @@
 
 #mode,
 #custom-spotify,
-#custom-yandexmusic {
+#custom-yandexmusic,
+#custom-chromium {
 	background: #404040;
+	padding: 0 .7em;
+}
+
+#taskbar {
+	background: #404040;
+}
+#taskbar button {
 	padding: 0 .7em;
 }
 
 #tray,
 #idle_inhibitor,
+#bluetooth,
 #pulseaudio,
+#wireplumber,
 #network,
 #language {
 	padding: 0 .7em;
@@ -62,6 +72,10 @@
 
 #custom-yandexmusic {
 	color: #FDD228;
+}
+
+#custom-chromium {
+	color: #91b0e8;
 }
 
 #network.vpn {

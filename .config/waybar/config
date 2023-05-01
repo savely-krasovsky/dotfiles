@@ -13,18 +13,20 @@
 		"sway/workspaces",
 		"sway/mode",
 		"custom/spotify",
-		"custom/yandexmusic"
+		"custom/yandexmusic",
+		"custom/chromium"
 	],
 	"modules-center": [
+		"wlr/taskbar"
 	],
 	"modules-right": [
-		"tray",
 		"idle_inhibitor",
-		"pulseaudio",
-		"network#ethernet",
-		"network#wifi",
-		"network#vpn",
+		"tray",
 		"sway/language",
+		"pulseaudio",
+		"network#vpn",
+		"network#wifi",
+		"network#ethernet",
 		"clock#date",
 		"clock#time"
 	],
@@ -60,6 +62,13 @@
 		"escape": true,
 		"exec": "$HOME/.config/waybar/mediaplayer.py --player YandexMusic 2> /dev/null"
 	},
+	"custom/chromium": {
+		"format": "<span foreground=\"#4688f4\"></span> {}",
+		"return-type": "json",
+		"max-length": 60,
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py --player chromium 2> /dev/null"
+        },
 
 	"tray": {
 		"icon-size": 16,
@@ -78,7 +87,7 @@
 		"format-muted": "",
 		"format-icons": {
 			"headphone": "",
-			"default": ["", ""]
+			"default": ["", "", ""]
 		},
 		"on-click": "pavucontrol"
 	},
@@ -118,5 +127,16 @@
 		"interval": 1,
 		"format": "{:%T}",
 		"tooltip-format": "{:%Z}"
+	},
+	"wlr/taskbar": {
+		"format": "{icon} {name}",
+		"icon-size": 16,
+		"icon-theme": "Papirus-Dark",
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+			"Alacritty"
+		],
 	}
 }

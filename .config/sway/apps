@@ -7,6 +7,7 @@ for_window {
 
 	[app_id="pavucontrol"]						floating enabled
 	[app_id="nm-connection-editor"]					floating enabled
+	[app_id="blueberry"]						floating enabled
 	[app_id="org.gnome.Calculator"]					floating enabled
 	[app_id="firefox" title="Firefox — Индикатор общего доступа"]	floating enabled
 
