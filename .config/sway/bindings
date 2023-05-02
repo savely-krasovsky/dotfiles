@@ -12,15 +12,25 @@ bindsym --to-code $mod+Shift+q kill
 
 # Start your launcher
 bindsym --to-code $mod+d exec $menu
+
 # Start clipboard manager
 bindsym --to-code $mod+x exec $clipboardmanager
+
+# Start browser
+bindsym --to-code $mod+Shift+f exec firefox
+
+# Start file manager
+bindsym --to-code $mod+Shift+t exec thunar
+
+# Start notification center
+bindsym --to-code $mod+Shift+n exec swaync-client -t -sw
 
 # Take a screenshot of screen
 bindsym Print exec grim - | wl-copy -t image/png
 # Take a screenshot of focused screen
-bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png
+bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | swappy -f -
 # Take a screenshot of region
-bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | swappy -f -
 
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -140,9 +150,9 @@ bindsym --to-code $mod+r mode "resize"
 
 ## multimedia
 
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous

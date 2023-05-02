@@ -21,12 +21,15 @@ exec_always wl-paste --type text --watch cliphist store
 exec_always wl-paste --type image --watch cliphist store
 
 # NetworkManager applet
-exec_always nm-applet --indicator
+exec nm-applet --indicator
 # Blueman applet
-exec_always blueman-applet
+exec blueman-applet
 
 # polkit agent (e.g. to mount disks using GUI)
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec wlsunset -l 55.9395 -L 37.5172 -t 4500 -T 6500 -g 1.0
+exec swaync
 
 # Mainly needed to import 50-systemd-user.conf
 include /etc/sway/config.d/*

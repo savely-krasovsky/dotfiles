@@ -23,15 +23,9 @@
 #mode,
 #custom-spotify,
 #custom-yandexmusic,
-#custom-chromium {
+#custom-chromium,
+#custom-firefox {
 	background: #404040;
-	padding: 0 .7em;
-}
-
-#taskbar {
-	background: #404040;
-}
-#taskbar button {
 	padding: 0 .7em;
 }
 
@@ -43,6 +37,11 @@
 #network,
 #language {
 	padding: 0 .7em;
+	border-left: 1px solid #404040;
+}
+
+#custom-notification {
+	padding: 0 .8em 0 .7em;
 	border-left: 1px solid #404040;
 }
 
@@ -69,13 +68,14 @@
 #custom-spotify {
 	color: #66DC69;
 }
-
 #custom-yandexmusic {
 	color: #FDD228;
 }
-
 #custom-chromium {
 	color: #91b0e8;
+}
+#custom-firefox {
+	color: #febf37;
 }
 
 #network.vpn {
@@ -84,4 +84,22 @@
 
 #network.disconnected {
 	color: orange;
+}
+
+@keyframes blink-warning {
+	to {
+		background-color: orange;
+	}
+}
+
+#custom-notification {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#custom-notification.inhibited-notification,
+#custom-notification.inhibited-none {
+	animation-name: blink-warning;
+	animation-duration: 3s;
 }

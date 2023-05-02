@@ -11,24 +11,25 @@
 
 	"modules-left": [
 		"sway/workspaces",
-		"sway/mode",
-		"custom/spotify",
-		"custom/yandexmusic",
-		"custom/chromium"
+		"clock#date",
+		"clock#time",
+		"sway/language",
+		"sway/mode"
 	],
 	"modules-center": [
-		"wlr/taskbar"
+		//"custom/spotify",
+                //"custom/yandexmusic",
+                //"custom/chromium",
+		"custom/firefox"
 	],
 	"modules-right": [
 		"idle_inhibitor",
-		"tray",
-		"sway/language",
 		"pulseaudio",
 		"network#vpn",
 		"network#wifi",
 		"network#ethernet",
-		"clock#date",
-		"clock#time"
+		"custom/notification",
+		"tray"
 	],
 
 
@@ -45,7 +46,7 @@
 		}
 	},
 	"sway/mode": {
-		"format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+		"format": "<span style=\"italic\">󰁌 {}</span>",
 		"tooltip": false
 	},
 	"custom/spotify": {
@@ -53,27 +54,30 @@
 		"return-type": "json",
 		"max-length": 60,
 		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
 	},
 	"custom/yandexmusic": {
 		"format": "<span foreground=\"#E8482C\"></span> {}",
 		"return-type": "json",
 		"max-length": 60,
 		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py --player YandexMusic 2> /dev/null"
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player YandexMusic 2> /dev/null"
 	},
 	"custom/chromium": {
 		"format": "<span foreground=\"#4688f4\"></span> {}",
 		"return-type": "json",
 		"max-length": 60,
 		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py --player chromium 2> /dev/null"
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player chromium 2> /dev/null"
+        },
+	"custom/firefox": {
+		"format": "<span foreground=\"#ff6629\"></span> {}",
+                "return-type": "json",
+                "max-length": 60,
+		"escape": true,
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player firefox 2> /dev/null"
         },
 
-	"tray": {
-		"icon-size": 16,
-		"spacing": 10
-	},
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
@@ -94,29 +98,31 @@
 	"network#ethernet": {
 		"interface": "enp*",
 		"format": "",
+		"format-disconnected": "",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format-disconnected": "⚠ Отключено!",
 		"on-click": "nm-connection-editor"
 	},
 	"network#wifi": {
 		"interface": "wlp*",
 		"interval": 1,
-		"format-wifi": " {signalStrength}%",
+		"format-wifi": "{icon} {signalStrength}%",
 		"format-linked": "",
 		"format-disconnected": "",
+		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
 		"tooltip-format": "{ifname} ({essid}): {ipaddr}/{cidr}",
 		"on-click": "nm-connection-editor"
 	},
 	"network#vpn": {
 		"interface": "vpn*",
 		"format": "",
+		"format-disconnected": "",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format-disconnected": "⚠ Отключено!",
 		"on-click": "nm-connection-editor"
 	},
 	"sway/language": {
 		"format": " {}",
-		"tooltip-format": "{long}"
+		"tooltip-format": "{long}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
 	},
 	"clock#date": {
 		"interval": 1,
@@ -138,5 +144,29 @@
 		"ignore-list": [
 			"Alacritty"
 		],
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "",
+			"none": "󰂜",
+			"dnd-notification": " 󰍷",
+			"dnd-none": "󰂜 󰍷",
+			"inhibited-notification": "",
+			"inhibited-none": "󰂜",
+			"dnd-inhibited-notification": " 󰍷",
+			"dnd-inhibited-none": "󰂜 󰍷"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
 	}
 }
