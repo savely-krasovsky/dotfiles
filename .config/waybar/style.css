@@ -7,6 +7,19 @@
 	padding: 0;
 }
 
+/* Keyframes */
+@keyframes blink-update {
+	to {
+		background-color: dodgerblue;
+	}
+}
+
+@keyframes blink-warning {
+	to {
+		background-color: orange;
+	}
+}
+
 /* The whole bar */
 #waybar {
 	background: #323232;
@@ -15,48 +28,33 @@
 	font-size: 14px;
 }
 
-/* Modules */
-#workspaces {
+/* Left modules */
+#workspaces,
+#custom-pacman,
+#clock,
+#language,
+#mode {
 	padding: 0 .7em;
+	border-right: 1px solid #404040;
 }
 
-#mode,
-#custom-spotify,
-#custom-yandexmusic,
-#custom-chromium,
-#custom-firefox {
-	background: #404040;
-	padding: 0 .7em;
+#custom-pacman {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
-
-#tray,
-#idle_inhibitor,
-#bluetooth,
-#pulseaudio,
-#wireplumber,
-#network,
-#language {
-	padding: 0 .7em;
-	border-left: 1px solid #404040;
-}
-
-#custom-notification {
-	padding: 0 .8em 0 .7em;
-	border-left: 1px solid #404040;
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 3s;
 }
 
 #clock {
 	background: #404040;
 }
-
-#clock.date {
-	padding: 0 .7em;
-}
 #clock.time {
 	font-weight: bold;
-	padding-right: .7em;
+	padding-left: 0;
 }
-
 
 #mode {
 	background: #64727D;
@@ -65,6 +63,14 @@
 	padding-bottom: 2px;
 }
 
+/* Center modules */
+#custom-spotify,
+#custom-yandexmusic,
+#custom-chromium,
+#custom-firefox {
+	background: #404040;
+	padding: 0 .7em;
+}
 #custom-spotify {
 	color: #66DC69;
 }
@@ -78,21 +84,30 @@
 	color: #febf37;
 }
 
+/* Right modules */
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#custom-notification,
+#tray {
+	padding: 0 .7em;
+	border-left: 1px solid #404040;
+}
+
 #network.vpn {
 	color: #66DC69;
 }
 
+/* Hide instead of marking */
+/*
 #network.disconnected {
 	color: orange;
 }
-
-@keyframes blink-warning {
-	to {
-		background-color: orange;
-	}
-}
+*/
 
 #custom-notification {
+	padding: 0 .8em 0 .7em;
+
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;

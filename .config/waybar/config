@@ -5,6 +5,7 @@
 
 	"layer": "top",
 	"position": "top",
+	"output": ["DP-2"],
 
 	// If height property would be not present, it'd be calculated dynamically
 	"height": 30,
@@ -13,6 +14,7 @@
 		"sway/workspaces",
 		"clock#date",
 		"clock#time",
+		"custom/pacman",
 		"sway/language",
 		"sway/mode"
 	],
@@ -77,6 +79,16 @@
 		"escape": true,
 		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player firefox 2> /dev/null"
         },
+	"custom/pacman": {
+		"format": "{icon}{}",
+		"return-type": "json",
+		"format-icons": {
+			"pending-updates": " ",
+			"updated": ""
+		},
+		"exec-if": "which waybar-updates",
+		"exec": "waybar-updates"
+	},
 
 	"idle_inhibitor": {
 		"format": "{icon}",
