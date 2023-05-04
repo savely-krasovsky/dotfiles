@@ -77,7 +77,8 @@
                 "return-type": "json",
                 "max-length": 60,
 		"escape": true,
-		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player firefox 2> /dev/null"
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player firefox 2> /dev/null",
+		"on-click": "playerctl --player firefox play-pause"
         },
 	"custom/pacman": {
 		"format": "{icon}{}",
