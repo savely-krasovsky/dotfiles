@@ -54,7 +54,7 @@
 			"firefox": "<span foreground=\"#ff6629\"></span>",
 			"chromium": "<span foreground=\"#4688f4\"></span>",
 			"spotify": "<span foreground=\"#1d8954\"></span>",
-			"YandexMusic": "<span foreground=\"#E8482C\"></span>"
+			"vlc": "<span foreground=\"#e76a00\">󰕼</span>"
 		},
 		"return-type": "json",
 		"max-length": 60,

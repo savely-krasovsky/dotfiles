@@ -68,16 +68,16 @@
 	background: #404040;
 	padding: 0 .7em;
 }
-#custom-media.custom-spotify {
-	color: #66DC69;
-}
-#custom-media.custom-yandexmusic {
-	color: #FDD228;
+#custom-media.custom-firefox {
+	color: #febf37;
 }
 #custom-media.custom-chromium {
 	color: #91b0e8;
 }
-#custom-media.custom-firefox {
+#custom-media.custom-spotify {
+	color: #66DC69;
+}
+#custom-media.custom-vlc {
 	color: #febf37;
 }
 

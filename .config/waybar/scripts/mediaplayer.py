@@ -57,6 +57,10 @@ def on_player_appeared(manager, player, selected_player=None):
 
 def on_player_vanished(manager, player):
     logger.info('Player has vanished')
+    if len(manager.props.players) > 0:
+        player = manager.props.players[0]
+        on_metadata(player, player.props.metadata, manager)
+        return
     sys.stdout.write('\n')
     sys.stdout.flush()
 
@@ -82,7 +86,7 @@ def dbus_signal_handler(*args, manager, **kwargs):
     # there is no implicit way to get current player,
     # so we need to create a new manager to get the right order of players
     new_manager = Playerctl.PlayerManager()
-    if len(new_manager.props.player_names) > 0:
+    if len(new_manager.props.player_names) > 1:
         current_player_name = new_manager.props.player_names[0].name
         for player in manager.props.players:
             if player.props.player_name == current_player_name:
