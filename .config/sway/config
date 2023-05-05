@@ -24,6 +24,8 @@ exec_always wl-paste --type image --watch cliphist store
 exec nm-applet --indicator
 # Blueman applet
 exec blueman-applet
+# playerctld
+exec playerctld daemon
 
 # polkit agent (e.g. to mount disks using GUI)
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

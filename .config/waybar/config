@@ -19,10 +19,7 @@
 		"sway/mode"
 	],
 	"modules-center": [
-		//"custom/spotify",
-                //"custom/yandexmusic",
-                //"custom/chromium",
-		"custom/firefox"
+		"custom/media"
 	],
 	"modules-right": [
 		"idle_inhibitor",
@@ -51,42 +48,30 @@
 		"format": "<span style=\"italic\">󰁌 {}</span>",
 		"tooltip": false
 	},
-	"custom/spotify": {
-		"format": " {}",
+	"custom/media": {
+		"format": "{icon} {}",
+		"format-icons": {
+			"firefox": "<span foreground=\"#ff6629\"></span>",
+			"chromium": "<span foreground=\"#4688f4\"></span>",
+			"spotify": "<span foreground=\"#1d8954\"></span>",
+			"YandexMusic": "<span foreground=\"#E8482C\"></span>"
+		},
 		"return-type": "json",
 		"max-length": 60,
 		"escape": true,
-		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
+		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
+		"on-click": "playerctl play-pause",
+		"on-click-right": "playerctld shift; dbus-send --system --type=signal / org.waybar.Media.Shift",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous"
 	},
-	"custom/yandexmusic": {
-		"format": "<span foreground=\"#E8482C\"></span> {}",
-		"return-type": "json",
-		"max-length": 60,
-		"escape": true,
-		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player YandexMusic 2> /dev/null"
-	},
-	"custom/chromium": {
-		"format": "<span foreground=\"#4688f4\"></span> {}",
-		"return-type": "json",
-		"max-length": 60,
-		"escape": true,
-		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player chromium 2> /dev/null"
-        },
-	"custom/firefox": {
-		"format": "<span foreground=\"#ff6629\"></span> {}",
-                "return-type": "json",
-                "max-length": 60,
-		"escape": true,
-		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player firefox 2> /dev/null",
-		"on-click": "playerctl --player firefox play-pause"
-        },
 	"custom/pacman": {
 		"format": "{icon}{}",
-		"return-type": "json",
 		"format-icons": {
 			"pending-updates": " ",
 			"updated": ""
 		},
+		"return-type": "json",
 		"exec-if": "which waybar-updates",
 		"exec": "waybar-updates"
 	},

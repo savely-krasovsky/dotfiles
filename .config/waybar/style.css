@@ -64,23 +64,20 @@
 }
 
 /* Center modules */
-#custom-spotify,
-#custom-yandexmusic,
-#custom-chromium,
-#custom-firefox {
+#custom-media {
 	background: #404040;
 	padding: 0 .7em;
 }
-#custom-spotify {
+#custom-media.custom-spotify {
 	color: #66DC69;
 }
-#custom-yandexmusic {
+#custom-media.custom-yandexmusic {
 	color: #FDD228;
 }
-#custom-chromium {
+#custom-media.custom-chromium {
 	color: #91b0e8;
 }
-#custom-firefox {
+#custom-media.custom-firefox {
 	color: #febf37;
 }
 
