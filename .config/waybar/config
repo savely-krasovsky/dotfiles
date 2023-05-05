@@ -53,6 +53,7 @@
 		"format-icons": {
 			"firefox": "<span foreground=\"#ff6629\"></span>",
 			"chromium": "<span foreground=\"#4688f4\"></span>",
+			"tdesktop": "<span foreground=\"#28a9eb\"></span>",
 			"spotify": "<span foreground=\"#1d8954\"></span>",
 			"vlc": "<span foreground=\"#e76a00\">󰕼</span>"
 		},
