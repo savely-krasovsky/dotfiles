@@ -62,7 +62,7 @@
 		"escape": true,
 		"exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
 		"on-click": "playerctl play-pause",
-		"on-click-right": "playerctld shift; dbus-send --system --type=signal / org.waybar.Media.Shift",
+		"on-click-right": "playerctld shift; dbus-send --type=signal / org.waybar.Player.Shift",
 		"on-scroll-up": "playerctl next",
 		"on-scroll-down": "playerctl previous"
 	},
