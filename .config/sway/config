@@ -16,6 +16,9 @@ include ./bar
 include ./style
 include ./apps
 
+# Mainly needed to import 50-systemd-user.conf
+include /etc/sway/config.d/*
+
 # Clipboard manager support
 exec_always wl-paste --type text --watch cliphist store
 exec_always wl-paste --type image --watch cliphist store
@@ -32,6 +35,3 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec wlsunset -l 55.9395 -L 37.5172 -t 4500 -T 6500 -g 1.0
 exec swaync
-
-# Mainly needed to import 50-systemd-user.conf
-include /etc/sway/config.d/*
