@@ -130,7 +130,7 @@
 	},
 	"clock#time": {
 		"interval": 1,
-		"format": "{:%T}",
+		"format": "{:%H:%M:%OS}",
 		"tooltip-format": "{:%Z}"
 	},
 	"wlr/taskbar": {
