@@ -6,3 +6,7 @@ input type:keyboard {
 	xkb_layout "us,ru"
 	xkb_options "grp:alt_space_toggle"
 }
+
+bindsym --release Control_L input type:keyboard xkb_switch_layout 0
+bindsym --release Control_R input type:keyboard xkb_switch_layout 1
+

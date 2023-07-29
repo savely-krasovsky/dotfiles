@@ -1,16 +1,6 @@
-[user]
-	email = savely@krasovs.ky
-	name = "Savely Krasovsky"
-
-[credential]
-	helper = /usr/lib/git-core/git-credential-gnome-keyring
-
-[sendemail]
-	smtpserver = smtp.fastmail.com
-	smtpuser = savely@krasovs.ky
-	smtpencryption = tls
-	smtpserverport = 587
-[core]
-	autocrlf = input
+[includeIf "gitdir:~/Projects/personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Projects/work/"]
+  path = ~/.gitconfig-work
 [safe]
 	directory = /opt/flutter

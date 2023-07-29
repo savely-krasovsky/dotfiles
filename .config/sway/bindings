@@ -26,11 +26,11 @@ bindsym --to-code $mod+Shift+t exec thunar
 bindsym --to-code $mod+Shift+n exec swaync-client -t -sw
 
 # Take a screenshot of screen
-bindsym Print exec grim - | wl-copy -t image/png
+bindsym Print exec grim - | tee >(wl-copy -t image/png) | swappy -f -
 # Take a screenshot of focused screen
-bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | swappy -f -
+bindsym Print+Alt exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | tee >(wl-copy -t image/png) | swappy -f -
 # Take a screenshot of region
-bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | swappy -f -
+bindsym --to-code Shift+Alt+s exec grim -g "$(slurp -d)" - | tee >(wl-copy -t image/png) | swappy -f -
 
 
 # Drag floating windows by holding down $mod and left mouse button.
